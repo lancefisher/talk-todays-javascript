@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/solarized_light.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -71,30 +71,78 @@
 					<section data-transition="none">
 						<h2>What's a Component?</h2>
 						<img class="mockup" src="/img/todo-mockup-1.png">
-						<p>&nbsp;</p>
+						<p class='mono'>&nbsp;</p>
 					</section>
 					<section data-transition="none">
 						<h2>What's a Component?</h2>
 						<img class="mockup" src="/img/todo-mockup-2.png">
-						<p>AppComponent</p>
+						<p class='mono'>AppComponent</p>
 					</section>
 					<section data-transition="none">
 						<h2>What's a Component?</h2>
 						<img class="mockup" src="/img/todo-mockup-3.png">
-						<p>AddItemComponent</p>
+						<p class='mono'>AddItemComponent</p>
 					</section>
 					<section data-transition="none">
 						<h2>What's a Component?</h2>
 						<img class="mockup" src="/img/todo-mockup-4.png">
-						<p>TodoListComponent</p>
+						<p class='mono'>TodoListComponent</p>
 					</section>
 					<section data-transition="none">
 						<h2>What's a Component?</h2>
 						<img class="mockup" src="/img/todo-mockup-5.png">
-						<p>TodoListItemComponent</p>
+						<p class='mono'>TodoListItemComponent</p>
 					</section>
 				</section>
 
+				<section>
+					<section data-transition="none">
+						<h2 class="mono">HelloWorldComponent</h2>
+	          <pre><code contenteditable>
+	&lt;div id="container">&lt;/div>
+
+	&lt;script>
+	  var HelloMessage = React.createClass({
+	    render: function() {
+	      return &lt;div>Hello {this.props.name}!&lt;/div>;
+
+	    }
+	  });
+
+	  var container = document.getElementById('container')
+	  React.render(&lt;HelloMessage name="world" />,
+	               container);
+	&lt;/script>
+	          </code></pre>
+
+	        	<div>Hello world!</div>
+
+					</section>
+
+					<section data-transition="none">
+						<h2 class="mono">HelloWorldComponent</h2>
+	          <pre><code contenteditable>
+	&lt;div id="container">&lt;/div>
+
+	&lt;script>
+	  var HelloMessage = React.createClass({
+	    render: function() {
+	      return React.createElement("div", null, "Hello ",
+	                                 this.props.name);
+	    }
+	  });
+
+	  var container = document.getElementById('container')
+	  React.render(React.createElement(HelloMessage, {name: "John"}),
+	               container);
+	&lt;/script>
+	          </code></pre>
+
+	        	<div>Hello world!</div>
+
+					</section>
+
+				</section>
 
 
 				<!-- Example of nested vertical slides -->
@@ -445,6 +493,8 @@ Reveal.addEventListener( 'customevent', function() {
 			});
 
 		</script>
+
+		<script src="node_modules/react/dist/react.min.js"></script>
 
 	</body>
 </html>

@@ -456,13 +456,60 @@ $ jsx . /out
           <h2>Events</h2>
           <ul>
             <li>SyntheticEvent</li>
-            <li>Just a wrapper around native events</li>
+            <li>Autobinding</li>
+            <li>Event Delegation</li>
             <li>Same in all browsers</li>
           </ul>
         </section>
 
         <section>
+          <h2>Events</h2>
+          <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    getInitialState: function() {
+      return { clicks: 0 };
+    },
+    handleClick: function(e) {
+      e.preventDefault();
+      this.setState({ clicks: this.state.clicks + 1 });
+    },
+    render: function() {
+      return (
+        &lt;div>
+          &lt;a onClick={this.handleClick}>Click Me!&lt;/a>
+          &amp;nbsp; Clicks: {this.state.clicks}
+        &lt;/div>
+      );
+    }
+  });
+          </code></pre>
 
+          <!-- Render method Demo -->
+          <div id="container-5"></div>
+          <script type="text/jsx">
+            var HelloMessage = React.createClass({
+              getInitialState: function() {
+                return { clicks: 0 };
+              },
+              handleClick: function(e) {
+                e.preventDefault();
+                this.setState({
+                  clicks: this.state.clicks + 1
+                });
+              },
+              render: function() {
+                return (
+                  <div>
+                    <a onClick={this.handleClick}>Click Me!</a>
+                    &nbsp; Clicks: {this.state.clicks}
+                  </div>
+                );
+              }
+            });
+            var container = document.getElementById('container-5');
+            React.render(<HelloMessage name="world" />,
+                         container);
+          </script>
         </section>
 
 

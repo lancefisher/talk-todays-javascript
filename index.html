@@ -513,8 +513,66 @@ $ jsx . /out
         </section>
 
 
+        <section>
+          <h2>Forms</h2>
+          <ul>
+            <li>Controlled Components - value</li>
+            <li>Uncontrolled Components - defaultValue</li>
+          </ul>
+        </section>
 
+        <section>
+          <h2>Forms - Controlled Components</h2>
+                    <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    getInitialState: function() { return { name: '' }; },
+    handleChange: function(e) {
+      this.setState({ name: e.target.value });
+    },
+    render: function() {
+      var name = this.state.name;
+      var message = name ? 'Hi, ' + name : '';
+      return (
+        &lt;div>
+          &lt;input type="text"
+            value={name}
+            onChange={this.handleChange} />&lt;br/>
+          {message}
+        &lt;/div>
+      );
+    }
+  });
+          </code></pre>
 
+          <!-- Render method Demo -->
+          <div id="container-6"></div>
+          <script type="text/jsx">
+            var HelloMessage = React.createClass({
+              getInitialState: function() { return { name: '' }; },
+              handleChange: function(e) {
+                this.setState({
+                  name: e.target.value
+                });
+              },
+              render: function() {
+                var name = this.state.name;
+                var message = name ? 'Hi, ' + name : '';
+                return (
+                  <div>
+                    <input type="text"
+                      value={name}
+                      onChange={this.handleChange} /><br/>
+                    {message}
+                  </div>
+                );
+              }
+            });
+            var container = document.getElementById('container-6');
+            React.render(<HelloMessage name="world" />,
+                         container);
+          </script>
+
+        </section>
 
         <section data-markdown>
           <script type="text/template">

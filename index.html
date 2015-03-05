@@ -222,53 +222,50 @@ $ jsx . /out
         </section>
 
         <section>
+          <h2>The render method</h2>
+          <ul>
+            <li>Pure Function</li>
+            <li>Don't change props or state</li>
+            <li>Return hierarchy of elements</li>
+          </ul>
+        </section>
 
-          <section>
-            <h2>The render method</h2>
-            <ul>
-              <li>Pure Function</li>
-              <li>Don't change props or state</li>
-              <li>Return hierarchy of elements</li>
-            </ul>
-          </section>
+        <section>
+          <h2>The render method</h2>
+            <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    render: function() {
+      var name = 'Mr. ' + this.props.name;
+      return (
+        &lt;div>
+          Hello {name}!
+        &lt;/div>
+      );
 
-          <section>
-            <h2>The render method</h2>
-              <pre><code contenteditable>
-    var HelloMessage = React.createClass({
-      render: function() {
-        var name = 'Mr. ' + this.props.name;
-        return (
-          &lt;div>
-            Hello {name}!
-          &lt;/div>
-        );
+    }
+  });
+            </code></pre>
 
-      }
-    });
-              </code></pre>
+          <!-- Render method Demo -->
+          <div id="container-3"></div>
+          <script type="text/jsx">
+            var HelloMessage = React.createClass({
+              render: function() {
+                var name = 'Mr. ' + this.props.name;
+                return (
+                  <div>
+                    Hello {name}!
+                  </div>
+                );
 
-            <!-- Render method Demo -->
-            <div id="container-3"></div>
-            <script type="text/jsx">
-              var HelloMessage = React.createClass({
-                render: function() {
-                  var name = 'Mr. ' + this.props.name;
-                  return (
-                    <div>
-                      Hello {name}!
-                    </div>
-                  );
+              }
+            });
 
-                }
-              });
+            var container = document.getElementById('container-3');
+            React.render(<HelloMessage name="world" />,
+                         container);
+          </script>
 
-              var container = document.getElementById('container-3');
-              React.render(<HelloMessage name="world" />,
-                           container);
-            </script>
-
-          </section>
         </section>
 
         <section>
@@ -337,8 +334,136 @@ $ jsx . /out
           </script>
         </section>
 
+        <section>
+          <h2>Component Lifecycle</h2>
+          <ul>
+            <li>Mounting</li>
+            <li>Updating</li>
+            <li>Unmounting</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Component Lifecycle - Mounting</h2>
+          <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    componentWillMount: function() {
+
+    },
+    componentDidMount: function() {
+
+    }
+  });
+          </code></pre>
+        </section>
+
+        <section>
+
+          <section data-transition="none">
+            <h2>Component Lifecycle - Updating</h2>
+            <pre><code contenteditable>
+    var HelloMessage = React.createClass({
+      componentWillReceiveProps: function(nextProps) {
 
 
+
+      },
+      shouldComponentUpdate(): function(nextProps, nextState) {
+
+      }
+    });
+            </code></pre>
+          </section>
+
+          <section data-transition="none">
+            <h2>Component Lifecycle - Updating</h2>
+            <pre><code contenteditable>
+    var HelloMessage = React.createClass({
+      componentWillReceiveProps: function(nextProps) {
+        this.setState({
+          profiting: nextProps.stockPrice > this.props.stockPrice
+        });
+      },
+      shouldComponentUpdate: function(nextProps, nextState) {
+        return nextProps.immutable !== this.props.immutable;
+      }
+    });
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Component Lifecycle - Updating</h2>
+          <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    componentWillUpdate: function(nextProps, nextState) {
+      //too late to set state here
+    },
+    componentDidUpdate: function() {
+
+    }
+  });
+          </code></pre>
+        </section>
+
+        <section>
+
+          <section data-transition="none">
+            <h2>Component Lifecycle - Unmounting</h2>
+            <pre><code contenteditable>
+    var HelloMessage = React.createClass({
+      componentWillUnmount: function() {
+        // Clean up stuff here
+
+      }
+    });
+            </code></pre>
+          </section>
+
+          <section data-transition="none">
+            <h2>Component Lifecycle - Unmounting</h2>
+            <pre><code contenteditable>
+    var HelloMessage = React.createClass({
+      componentWillUnmount: function() {
+        // That interval we started...
+        clearInterval(this.state.intervalId);
+      }
+    });
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Component API</h2>
+          <p>This is the rest of it!</p>
+            <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    getInitialState: function() {
+    },
+    getDefaultProps: function() {
+    },
+    propTypes: [
+    ],
+    mixins: [
+    ],
+    statics: {
+    }
+  });
+            </code></pre>
+        </section>
+
+        <section>
+          <h2>Events</h2>
+          <ul>
+            <li>SyntheticEvent</li>
+            <li>Just a wrapper around native events</li>
+            <li>Same in all browsers</li>
+          </ul>
+        </section>
+
+        <section>
+
+        </section>
 
 
 

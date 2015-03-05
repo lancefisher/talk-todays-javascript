@@ -574,6 +574,117 @@ $ jsx . /out
 
         </section>
 
+
+        <section>
+          <h2>Reusable Components</h2>
+                    <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    render: function() {
+      return <div>Howdy, {this.props.name}!</div>;
+    }
+  });
+  var HelloPeople = React.createClass({
+    render: function() {
+      return (
+        &lt;div>
+          &lt;HelloMessage name="Weasel" />
+          &lt;HelloMessage name="Woodpecker" />
+          &lt;HelloMessage name="Putin" />
+        &lt;/div>
+      );
+    }
+  });
+          </code></pre>
+
+          <!-- Render method Demo -->
+          <div id="container-7"></div>
+          <script type="text/jsx">
+            var HelloMessage = React.createClass({
+              render: function() {
+                return <div>Howdy, {this.props.name}!</div>;
+              }
+            });
+            var HelloPeople = React.createClass({
+              render: function() {
+                return (
+                  <div>
+                    <HelloMessage name="Weasel" />
+                    <HelloMessage name="Woodpecker" />
+                    <HelloMessage name="Putin" />
+                  </div>
+                );
+              }
+            });
+
+            var container = document.getElementById('container-7');
+            React.render(<HelloPeople />,
+                         container);
+          </script>
+
+        </section>
+
+        <section>
+          <h2>Reusable Components</h2>
+                    <pre><code contenteditable>
+  var HelloMessage = React.createClass({
+    render: function() {
+      return &lt;div>Howdy, {this.props.name}!&lt;/div>;
+    }
+  });
+  var HelloPeople = React.createClass({
+    render: function() {
+      var people = ['Weasle', 'Woodpecker', 'Putin'];
+      var messages = people.map(function(p) {
+        return &lt;HelloMessage name={p} />;
+      })
+      return (
+        &lt;div>{messages}&lt;/div>
+      );
+    }
+  });
+          </code></pre>
+
+          <!-- Render method Demo -->
+          <div id="container-8"></div>
+          <script type="text/jsx">
+            var HelloMessage = React.createClass({
+              render: function() {
+                return <div>Howdy, {this.props.name}!</div>;
+              }
+            });
+            var HelloPeople = React.createClass({
+              render: function() {
+                var people = ['Weasle', 'Woodpecker', 'Putin'];
+                var messages = people.map(function(p) {
+                  return <HelloMessage name={p} />;
+                })
+                return (
+                  <div>{messages}</div>
+                );
+              }
+            });
+
+            var container = document.getElementById('container-8');
+            React.render(<HelloPeople />,
+                         container);
+          </script>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <section data-markdown>
           <script type="text/template">
             ## Markdown support

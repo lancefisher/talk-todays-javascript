@@ -136,12 +136,12 @@ visitors.js
 
         <section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -157,7 +157,7 @@ name: (talk-todays-javascript-code)
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -174,7 +174,7 @@ version: (1.0.0)
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -192,7 +192,7 @@ description: A demo of npm init
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -211,7 +211,7 @@ entry point: (index.js)
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -233,7 +233,7 @@ test command:
           </section>
 
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -255,7 +255,7 @@ git repository:
           </section>
 
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -278,7 +278,7 @@ keywords:
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -302,7 +302,7 @@ author: Lance Fisher
           </section>
 
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -328,7 +328,7 @@ license: (ISC) MIT
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
@@ -373,12 +373,12 @@ $
 
         <section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm install react --save
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ npm install react --save
 npm WARN package.json talk-todays-javascript-code@1.0.0 No repository field.
 npm WARN package.json talk-todays-javascript-code@1.0.0 No README data
@@ -388,12 +388,12 @@ $
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ cat package.json
                 </code></pre>
           </section>
           <section data-transition="none">
-                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+                <pre class="stretch"><code contenteditable class="nohighlight">
 $ cat package.json
 {
   "name": "talk-todays-javascript-code",
@@ -448,6 +448,173 @@ $
           </p>
         </section>
 
+        <section>
+          <h1>Modules</h1>
+        </section>
+        <section>
+          <h1>Modules</h1>
+          <p>
+            JavaScript doesn't have them!
+          </p>
+        </section>
+
+        <section>
+          <h1>Modules</h1>
+          <pre><code contenteditable>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  &lt;title>&lt;/title>
+&lt;/head>
+&lt;body>
+
+  <script src='lib1.js'></script>
+  <script src='lib2.js'></script>
+  <script src='lib3.js'></script>
+
+&lt;/body>
+&lt;/html>
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Global Namespace</h1>
+          <pre><code contenteditable class="javascript">
+// in lib1.js
+function log(s) {
+  //...
+}
+
+// in lib2.js
+function log(s, a) {
+  //...
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Namespacing</h1>
+          <pre><code contenteditable class="javascript">
+// in lib1.js
+var lib1 = {};
+lib1.log = function(s) {
+  console.log(s);
+}
+
+// in lib2.js
+var lib2 = {};
+lib2.log = function(s, a) {
+  console.log(s + a);
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <section>
+            <h1>IIFE - privates</h1>
+            <pre><code contenteditable class="javascript">
+// Immediately Invoked Function Expression in lib1.js
+var lib1 = function() {
+  var prefix = 'lib1: ';
+  return {
+    log: function(s) {
+      console.log(prefix + s)
+    }
+  }
+}();
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>IIFE - privates</h1>
+            <pre><code contenteditable class="javascript">
+// in lib2.js
+var lib2 = function() {
+  return {
+    log: function(s, a) {
+      console.log(s + a);
+    }
+  }
+}();
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h1>"Real" Modules</h1>
+          <ul>
+            <li>AMD</li>
+            <li>CJS</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>AMD</h1>
+
+            <pre><code contenteditable class="javascript">
+// define provided by a loader (require.js)
+define(function () {
+  var prefix = 'log: ';
+  var lib1 = {
+    name: 'lib1',
+    log: function(s) {
+      console.log(s);
+    }
+  }
+
+  return lib1;
+});
+            </code></pre>
+        </section>
+
+        <section>
+          <h1>AMD</h1>
+
+            <pre><code contenteditable class="javascript">
+define(function (require) {
+  var lib1 = require('lib1');
+  console.log('lib1.name', lib1.name);
+  var lib2 = {
+    log: function(s, a) {
+      console.log(s + a);
+    }
+  }
+
+  return lib2;
+});
+            </code></pre>
+        </section>
+
+        <section>
+          <h1>CJS</h1>
+
+            <pre><code contenteditable class="javascript">
+var prefix = 'log: ';
+function log(s){
+  console.log(prefix + s);
+}
+
+// exports provided by module loader
+exports.name = 'lib1';
+exports.log = log;
+            </code></pre>
+        </section>
+
+        <section>
+          <h1>CJS</h1>
+
+            <pre><code contenteditable class="javascript">
+// require provided by module loader
+var lib1 = require('./lib1.js');
+console.log('lib1.name', lib1.name);
+
+function log(s){
+  console.log(prefix + s);
+}
+
+exports.log = log;
+            </code></pre>
+        </section>
 
 
         <section>

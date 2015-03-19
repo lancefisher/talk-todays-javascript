@@ -46,7 +46,7 @@ Package Managers
 * bower
 * jspm
 
-Module loaders
+Module Loaders
 * commonjs vs amd
 * browserify
 * webpack

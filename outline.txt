@@ -1,0 +1,91 @@
+Outline
+========
+
+Modern JavaScript is fast, powerful and runs anywhere. Despite its quirks, JavaScript is immensely popular and widely used.
+
+However, knowing where to start with a new project is difficult given the wide variety of choice and rapid change in the field. We'll cover some history, the current lay of the land, and create a small app using some of the latest options that work well together.
+
+Learn when to use npm vs bower (and why to use a package management system), how to test your code easily in multiple browsers using Jasmine and Karma. Discover which lines of code are tested using Instanbul for coverage. Use Browserify to bundle your modular code. Create understandable UI components with React.
+
+
+
+
+<script type="text/javascript" src=""></script>
+<script src=""></script>
+
+History
+https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript
+
+Created in 10 days in May 1995 by Brendan Eich
+competes with Microsoft's VBScript
+1996-1997 Became ECMAScript
+ECMAScript 2 in 1998
+ECMAScript 3 in 1999
+JS2 / ES4 started in 2000 ambitious project. "harmony" mothballed in 2003
+2005 works starts again on ES4 with Macromedia to standardize ActionScript's features
+2007 Crockford and MS oppose ES4
+2009 Agreement ES3.1 renamed to ES5, "harmony" effort
+
+1999 in IE5 XMLHttpRequest as part of MSXML library
+2002 Netscape ships a working version of XMLHttpRequest
+
+ES4 small update to ES3 (ES3.1)
+ES6 Will become a standard in June - ES 2015
+ES7 - coming soon...
+
+
+body onload="javascript:alert('hi');"
+
+
+vbscript vs javascript
+progressive enhancement
+node.js 2009 / io.js
+
+Package Managers
+* npm
+* bower
+* jspm
+
+Module loaders
+* commonjs vs amd
+* browserify
+* webpack
+* requirejs
+* systemjs
+
+Linting
+* jslist
+* jshint
+* eslint
+
+Unit Tests
+* mocha
+* jasmine
+* qunit
+
+Coverage
+* Istanbul
+
+Frameworks
+* Backbone
+* Angular
+* Ember
+* React
+
+ES6 / ES7
+* Features
+* Sugar
+* Babel
+
+
+
+References
+* http://caniuse.com/
+* http://kangax.github.io/compat-table/es5/
+
+Tools
+* Chome DevTools
+  https://developer.chrome.com/devtools
+
+
+

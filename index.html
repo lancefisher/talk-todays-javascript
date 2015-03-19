@@ -74,46 +74,28 @@
         <section>
           <section data-transition="none">
             <h1>NPM</h1>
-              <pre><code contenteditable>
+              <pre class="stretch"><code contenteditable>
 $ npm install react
-
-
-
-
-
-
-
               </code></pre>
           </section>
           <section data-transition="none">
             <h1>NPM</h1>
-              <pre><code contenteditable>
+              <pre class="stretch"><code contenteditable>
 $ npm install react
 react@0.13.1 node_modules/react
 └── envify@3.4.0 (through@2.3.6, jstransform@10.1.0)
 $
-
-
-
-
               </code></pre>
           </section>
           <section data-transition="none">
             <h1>NPM</h1>
-              <pre><code contenteditable>
+              <pre class="stretch"><code contenteditable>
 $ ls -1 node_modules/react
-
-
-
-
-
-
-
-              </code></pre>
+             </code></pre>
           </section>
           <section data-transition="none">
             <h1>NPM</h1>
-              <pre><code contenteditable>
+              <pre class="stretch"><code contenteditable>
 $ ls -1 node_modules/react
 README.md
 addons.js
@@ -126,20 +108,13 @@ react.js
           </section>
           <section data-transition="none">
             <h1>NPM</h1>
-              <pre><code contenteditable>
+              <pre class="stretch"><code contenteditable>
 $ ls -1 node_modules/react/node_modules/envify
-
-
-
-
-
-
-
               </code></pre>
           </section>
           <section data-transition="none">
             <h1>NPM</h1>
-              <pre><code contenteditable>
+              <pre class="stretch"><code contenteditable>
 $ ls -1 node_modules/react/node_modules/envify
 README.md
 bin
@@ -383,7 +358,7 @@ About to write to
   "description": "A demo of npm init",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
   },
   "author": "Lance Fisher",
   "license": "MIT"
@@ -394,14 +369,61 @@ Is this ok? (yes) yes
 $
                 </code></pre>
           </section>
+        </section>
+
+        <section>
+          <section data-transition="none">
+                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+$ npm install react --save
+                </code></pre>
+          </section>
+          <section data-transition="none">
+                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+$ npm install react --save
+npm WARN package.json talk-todays-javascript-code@1.0.0 No repository field.
+npm WARN package.json talk-todays-javascript-code@1.0.0 No README data
+react@0.13.1 node_modules/react
+└── envify@3.4.0 (through@2.3.6, jstransform@10.1.0)
+$
+                </code></pre>
+          </section>
+          <section data-transition="none">
+                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+$ cat package.json
+                </code></pre>
+          </section>
+          <section data-transition="none">
+                <pre class="stretch"><code contenteditable class="nohighlight fullscreen">
+$ cat package.json
+{
+  "name": "talk-todays-javascript-code",
+  "version": "1.0.0",
+  "description": "A demo of npm init",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "author": "Lance Fisher",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.13.1"
+  }
+}
+$
+                </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h1>NPM</h1>
+          <ul>
+            <li>Commit package.json</li>
+            <li>Don't commit node_modules</li>
+            <li>Use npm shrinkwrap</li>
+          </ul>
 
 
-                  </section>
-
-
-
-
-
+        </section>
 
 
 

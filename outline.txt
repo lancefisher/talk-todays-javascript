@@ -77,13 +77,12 @@ ES6 / ES7
 * Sugar
 * Babel
 
-
-
 References
 * http://caniuse.com/
 * http://kangax.github.io/compat-table/es5/
 
 Tools
+* Source Maps
 * Chome DevTools
   https://developer.chrome.com/devtools
 

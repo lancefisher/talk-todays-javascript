@@ -3,6 +3,7 @@
 }
 
 .reveal section p.mono,
+.reveal section span.mono,
 .reveal section ul li span.mono,
 .reveal section ul li.mono {
   font-family: monospace;

@@ -424,6 +424,14 @@ $
         </section>
 
         <section>
+          <h1>NPM - Pro Tip&#8482;</h1>
+          <p>
+            Add this to your path:<br>
+            <span class="mono">node_modules/.bin</span>
+          </p>
+        </section>
+
+        <section>
           <h1>Bower</h1>
           <ul>
             <li>Flat structure of dependencies</li>
@@ -702,12 +710,12 @@ exports.log = log;
         <section>
           <section data-transition="none">
                 <pre class="stretch"><code contenteditable class="nohighlight">
-$ npm install browserify
+$ npm install browserify --save-dev
                 </code></pre>
           </section>
           <section data-transition="none">
                 <pre class="stretch"><code contenteditable class="nohighlight">
-$ npm install browserify
+$ npm install browserify --save-dev
 browserify@9.0.3 node_modules/browserify
 ├── https-browserify@0.0.0
 ├── tty-browserify@0.0.0
@@ -816,7 +824,7 @@ exports.log = log;
 
         <section>
           <caption>index.html</caption>
-          <pre class="stretch"><code contenteditable class="javascript">
+          <pre class="stretch"><code contenteditable class="html">
 &lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
@@ -848,13 +856,83 @@ $ browserify src/app.js -d -o bundle.js
           <img src="img/bundle-source-map.js.png" alt="">
         </section>
 
+        <section>
+          <h1>Minify</h1>
+          <p>
+            Uglify is your tool.
+          </p>
+          <pre><code contenteditable class="nohighlight">
+$ npm install uglify-js --save-dev
+          </code></pre>
+        </section>
 
+        <section>
+          <h1>Uglify your bundle:</h1>
+          <pre><code contenteditable class="nohighlight">
+$ uglifyjs bundle.js \
+  --compress \
+  --output bundle.min.js
+          </code></pre>
+        </section>
 
+        <section>
+          <caption>bundle.min.js</caption>
+          <pre class="stretch"><code contenteditable class="javascript">
+!function r(n,o,e){function t(u,f){if(!o[u]){if(!n[u]){var l="function"==typeof require&amp;&amp;require;if(!f&amp;&amp;l)return l(u,!0);if(i)return i(u,!0);var c=new Error("Cannot find module '"+u+"'");throw c.code="MODULE_NOT_FOUND",c}var a=o[u]={exports:{}};n[u][0].call(a.exports,function(r){var o=n[u][1][r];return t(o?o:r)},a,a.exports,r,n,o,e)}return o[u].exports}for(var i="function"==typeof require&amp;&amp;require,u=0;u&amp;lt;e.length;u++)t(e[u]);return t}({1:[function(r){var n=r("./lib1");n.log("hello world")},{"./lib1":2}],2:[function(r,n,o){function e(r){console.log(r)}o.log=e},{}]},{},[1]);
+          </code></pre>
+        </section>
 
+        <section>
+          <h1>Minified + Souce Maps</h1>
+          <p>
+            First we need external source maps...
+          </p>
+          <pre><code contenteditable class="nohighlight">
+$ npm install exorcist --save-dev
+          </code></pre>
+          <pre><code contenteditable class="nohighlight">
+$ browserify src/app.js -d | exorcist bundle.js.map > bundle.js
+          </code></pre>
+        </section>
 
+        <section>
+          <caption>bundle.js</caption>
+          <pre><code contenteditable class="javascript">
+...
+//# sourceMappingURL=bundle.js.map
+          </code></pre>
+          <caption>bundle.js.map</caption>
+          <pre><code contenteditable class="javascript">
+{
+  "version": 3,
+  "sources": [
+    "node_modules/browserify/node_modules/browser-pack/_prelude.js",
+    "src/app.js",
+    "src/lib1.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;ACAA;AACA;AACA;AACA;AACA;;ACJA;AACA;AACA;AACA;AACA;AACA;AACA",
+  "file": "generated.js",
+  "sourceRoot": "",
+  "sourcesContent": [
+    "(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require==\"function\"&amp;&amp;require;if(!u&amp;&amp;a)return a(o,!0);if(i)return i(o,!0);var f=new Error(\"Cannot find module '\"+o+\"'\");throw f.code=\"MODULE_NOT_FOUND\",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require==\"function\"&amp;&amp;require;for(var o=0;o&amp;lt;r.length;o++)s(r[o]);return s})",
+    "// app.js\nvar lib1 = require('./lib1');\n\nlib1.log('hello world');\n// end app.js",
+    "// lib1.js\nfunction log(s){\n  console.log(s);\n}\n\nexports.log = log;\n// end lib1.js"
+  ]
+}
+          </code></pre>
+        </section>
 
-
-
+        <section>
+          <h1>New uglify step</h1>
+          <pre><code contenteditable class="nohighlight">
+$ uglifyjs bundle.js \
+  --compress
+  --in-source-map bundle.js.map \
+  --output bundle.min.js \
+  --source-map bundle.min.js.map
+          </code></pre>
+        </section>
 
 
 

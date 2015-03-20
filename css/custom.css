@@ -16,7 +16,8 @@
 }
 
 .reveal section img.logo {
-  width: 200px;
+  max-width: 200px;
+  max-height: 200px;
   background: none;
   margin: 20px;
   border: 0;

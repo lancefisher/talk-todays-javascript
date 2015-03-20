@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="twitter:widgets:csp" content="on">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>Today's JavaScript</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -867,7 +867,7 @@ $ npm install uglify-js --save-dev
         </section>
 
         <section>
-          <h1>Uglify your bundle:</h1>
+          <h1>Uglify your bundle</h1>
           <pre><code contenteditable class="nohighlight">
 $ uglifyjs bundle.js \
   --compress \
@@ -934,13 +934,129 @@ $ uglifyjs bundle.js \
           </code></pre>
         </section>
 
+        <section>
+          <h1>Webpack</h1>
+          <a href="http://webpack.github.io"><img src="img/webpack.png" class="logo"></a><br>
+          <ul>
+            <li>Like browserify - with everything</li>
+          </ul>
+        </section>
 
+        <section>
+          <h1>Webpack</h1>
+          <ul>
+            <li class="fragment roll-in">Config-based</li>
+            <li class="fragment roll-in">Loads AMD, CJS, .css, .less, images, and more</li>
+            <li class="fragment roll-in">Code Splitting</li>
+            <li class="fragment roll-in">Development Webserver</li>
+            <li class="fragment roll-in">File Watching</li>
+            <li class="fragment roll-in">Minify</li>
+            <li class="fragment roll-in">Source Maps</li>
+            <li class="fragment roll-in">Plugins for ES6, JSX, etc.</li>
+            <li class="fragment roll-in">Hot Module Replacement</li>
+          </ul>
+        </section>
 
+        <section>
+          <h1>Build Tools</h1>
+          <img src="img/grunt.png" class="logo">
+          <img src="img/gulp.png" class="logo">
+          <img src="img/npm.png" class="logo">
+        </section>
 
+        <section>
+          <h1>Grunt</h1>
+          <img src="img/grunt.png" class="logo"><br>
+          <ul>
+            <li>Config-based</li>
+            <li>Lots of plugins</li>
+          </ul>
+        </section>
 
+        <section>
+          <h1>Gulp</h1>
+          <img src="img/gulp.png" class="logo"><br>
+          <ul>
+            <li>Stream-based</li>
+            <li>Lots of plugins</li>
+            <li>Easy to add custom code</li>
+          </ul>
+        </section>
 
+        <section>
+          <h1>NPM</h1>
+          <img src="img/npm.png" class="logo"><br>
+          <p>
+            Not just a package manager!
+          </p>
+        </section>
 
+        <section>
+          <section data-transition="none">
+            <h1>NPM Scripts</h1>
+            <caption>package.json</caption>
+            <pre class="stretch"><code contenteditable class="javascript">
+  {
+    "name": "talk-todays-javascript-code",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+    },
+    "author": "Lance Fisher",
+    "license": "ISC"
+  }
+            </code></pre>
+          </section>
+          <section data-transition="none">
+            <h1>NPM Scripts</h1>
+            <caption>package.json</caption>
+            <pre class="stretch"><code contenteditable class="javascript">
+  {
+    "name": "talk-todays-javascript-code",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "scripts/build"
+    },
+    "author": "Lance Fisher",
+    "license": "ISC"
+  }
+            </code></pre>
+          </section>
 
+        </section>
+
+        <section>
+          <caption>scripts/build</caption>
+            <pre><code contenteditable class="bash">
+#!/usr/bin/env bash
+
+# Bundle our JavaScript
+browserify src/app.js -d | exorcist bundle.js.map > bundle.js
+
+# Minify with source maps
+uglifyjs bundle.js \
+  --compress \
+  --in-source-map bundle.js.map \
+  --output bundle.min.js \
+  --source-map bundle.min.js.map
+
+echo 'build complete'
+            </code></pre>
+            <pre><code contenteditable class="bash">
+$ chmod +x scripts/build
+            </code></pre>
+        </section>
+
+        <section>
+          <h1>NPM Scripts</h1>
+          <pre><code contenteditable class="javascript">
+$ npm run build
+          </code></pre>
+        </section>
 
 
         <section>

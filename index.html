@@ -54,6 +54,9 @@
           <p>
             <small>Presented by <a href="http://fisher.io">Lance Fisher</a> / <a href="http://twitter.com/lancefisher">@lancefisher</a></small>
           </p>
+          <p>
+            <small><a href="http://fisher.io/talk-todays-javascript">fisher.io/talk-todays-javascript</a></small>
+          </p>
         </section>
 
         <section>
@@ -695,6 +698,23 @@ exports.log = log;
         </section>
 
         <section>
+          <h1>ES6 Modules</h1>
+            <caption>lib1.js</caption>
+            <pre><code contenteditable class="javascript">
+function log(s){
+  console.log(prefix + s);
+}
+
+export log;
+            </code></pre>
+            <caption>app.js</caption>
+            <pre><code contenteditable class="javascript">
+import { log } from 'lib1';
+log('hello es6');
+            </code></pre>
+        </section>
+
+        <section>
           <h1>UMD</h1>
           <blockquote class="twitter-tweet" lang="en"><p>UMD Is a lie <a href="http://t.co/1G3Zbr86vm">http://t.co/1G3Zbr86vm</a>&#10;&#10;/<a href="https://twitter.com/ifandelse">@ifandelse</a></p>&mdash; Ryan Florence (@ryanflorence) <a href="https://twitter.com/ryanflorence/status/492023023302504449">July 23, 2014</a></blockquote>
         </section>
@@ -1053,11 +1073,93 @@ $ chmod +x scripts/build
 
         <section>
           <h1>NPM Scripts</h1>
-          <pre><code contenteditable class="javascript">
+          <pre><code contenteditable class="bash">
 $ npm run build
           </code></pre>
         </section>
 
+        <section>
+          <h1>Unit Testing</h1>
+          <img src="img/jasmine.svg" class="logo">
+          <img src="img/karma.png" class="logo">
+        </section>
+
+        <section>
+          <h1>Install Karma</h1>
+          <pre><code contenteditable class="bash">
+$ npm install karma --save-dev
+$ npm install karma-jasmine karma-chrome-launcher --save-dev
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Install Karma</h1>
+          <pre><code contenteditable class="bash">
+$ karma init
+          </code></pre>
+        </section>
+
+        <section>
+          <pre class="stretch"><code contenteditable class="javascript">
+$ karma init
+
+Which testing framework do you want to use ?
+Press tab to list possible options. Enter to move to the next question.
+> jasmine
+
+Do you want to use Require.js ?
+This will add Require.js plugin.
+Press tab to list possible options. Enter to move to the next question.
+> no
+
+Do you want to capture any browsers automatically ?
+Press tab to list possible options. Enter empty string to move to the next question.
+> Chrome
+>
+
+What is the location of your source and test files ?
+You can use glob patterns, eg. "js/*.js" or "test/**/*Spec.js".
+Enter empty string to move to the next question.
+> test/**/*Spec.js
+>
+
+Should any of the files included by the previous patterns be excluded ?
+You can use glob patterns, eg. "**/*.swp".
+Enter empty string to move to the next question.
+>
+
+Do you want Karma to watch all the files and run the tests on change ?
+Press tab to list possible options.
+> yes
+
+
+Config file generated at "/Users/lancefisher/code/talk-todays-javascript/karma.conf.js".
+            </code></pre>
+
+        </section>
+
+        <section>
+          <h1>Karma Config</h1>
+          <caption>karma.conf.js</caption>
+          <pre><code contenteditable class="javascript">
+module.exports = function(config) {
+  config.set({
+    basePath: '../..',
+    frameworks: ['jasmine'],
+    //...
+  });
+};
+          </code></pre>
+
+        </section>
+
+
+        <section>
+          <h1>Other Testing Tools</h1>
+          <a href="https://facebook.github.io/jest/"><img src="img/jest.jpg" class="logo"></a>
+          <a href="http://mochajs.org/"><img src="img/mocha.png" class="logo"></a>
+          <a href="https://qunitjs.com/"><img src="img/qunit.png" class="logo"></a>
+        </section>
 
         <section>
           <h1>Thanks!</h1>

@@ -82,6 +82,34 @@
             <li class="fragment roll-in">2016 - ECMAScript 2016</li>
           </ul>
         </section>
+
+        <section>
+          <caption>Not to long ago...</caption>
+          <pre class="stretch"><code contenteditable>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+&lt;html>
+&lt;head>
+&lt;script type="text/javascript" charset="utf-8">
+  function helloWorld() {
+    alert('hello javascript world!');
+  }
+&lt;/script>
+&lt;/head>
+&lt;body onload="javascript:helloWorld()">
+
+&lt;/body>
+&lt;/html>
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Change</h1>
+          <p>
+            The way we use JavaScript has changed in the last few years.
+          </p>
+        </section>
+
         <section>
           <h1>Package Managers</h1>
           <a href="https://www.npmjs.com/"><img src="img/npm.png" class="logo"></a>
@@ -900,6 +928,13 @@ $ browserify src/app.js -d -o bundle.js
         </section>
 
         <section>
+          <h1>Chrome DevTools</h1>
+          <p>
+             Great guide: <a href="https://developer.chrome.com/devtools">https://developer.chrome.com/devtools</a>
+          </p>
+        </section>
+
+        <section>
           <h1>Minify</h1>
           <p>
             Uglify is your tool.
@@ -1108,6 +1143,18 @@ $ npm run build
         </section>
 
         <section>
+          <h1>Jasmine</h1>
+          <pre><code contenteditable class="javascript">
+describe("Math Lib Tests", function() {
+  it("sums positive integers", function() {
+    var sum = add(2, 3);
+    expect(sum).toBe(5);
+  });
+});
+          </code></pre>
+        </section>
+
+        <section>
           <h1>Install Karma</h1>
           <pre><code contenteditable class="bash">
 $ npm install karma --save-dev
@@ -1174,6 +1221,26 @@ $ karma start karma.conf.js
         </section>
 
         <section>
+          <h1>Update package.json</h1>
+          <pre><code contenteditable class="javascript">
+"scripts": {
+  "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
+  "build": "scripts/build"
+},
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Update package.json</h1>
+          <pre><code contenteditable class="javascript">
+"scripts": {
+  "test": "karma start karma.conf.js",
+  "build": "scripts/build"
+},
+          </code></pre>
+        </section>
+
+        <section>
           <h1>Karma CommonJS</h1>
           <p>
             Karma was originally designed for AMD
@@ -1192,6 +1259,11 @@ $ karma start karma.conf.js
         </section>
 
         <section>
+          <h1>Can I Use?</h1>
+          <img src="img/caniuse.png" class="stretch">
+        </section>
+
+        <section>
           <h1>Framework Options</h1>
           <ul>
             <li>React / Flug</li>
@@ -1202,6 +1274,11 @@ $ karma start karma.conf.js
 
         <section>
           <h1>EcmaScript 2015</h1>
+          <p>
+            generators, arrow functions, classes, syntatic sugar, destructuring,
+            spread operator, template strings, lexical scoping, collection types,
+            promises, and more...
+          </p>
           <ul>
             <li>Standardizing this June</li>
             <li>Transpile with <a href="https://babeljs.io/">Babel</a></li>
